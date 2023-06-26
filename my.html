@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover"> 
+    <title>316于淼-我的</title>
+    <link rel="stylesheet" href="css/pub2.css">
+    <link rel="stylesheet" href="./js/swiper/swiper-bundle.min.css">
+    <script src="./fonts/iconfont.js"></script>
+    <style>
+        /* 滚动条 */
+        html{
+            line-height: 150%;           
+        }
+        body{
+            background: #f5f5f5;
+        }
+        .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+        }
+        h5{
+            font-size: 4vw;
+        }
+        /* 搜索栏 */
+        #header{
+            display: flex;
+            line-height: 3vh;
+            margin-top: 4.54vh;
+            margin-left: 20px;
+            margin-right: 28px;
+            z-index: 8;
+        }
+        #header div{
+            flex-grow: 1;
+            display: flex;
+        }
+        #header div span{
+            font-size: 14px;
+            margin: 0 6px;
+            line-height: 3vh;
+        }
+        #header span{
+            font-size: 2.8vw;
+            color: #343434;
+            background: #f5f5f5;
+        }
+        #header div>img{
+            width: 40%;
+            height: 80%;
+            display: none;
+        }
+        #header svg{
+            background: #f5f5f5;
+            padding: 1vw;
+        }
+        #header span:nth-of-type(2){
+            padding-left: 48vw;
+            width: 11vw;
+        }
+        #hphoto{
+            display: none;
+            background: #f5f5f5;
+            position: relative;
+        }
+        #hphoto img{
+            width: 40%;
+            display: none;
+            margin-top: .3vw;
+        }
+        #hphoto span{
+            position: absolute;
+            left: 5vw;
+            top: -.05vw;
+            width: 15vw;
+            color: #343434;
+            font-weight: bold;
+        }
+        /* 用户信息 */
+        .user{
+            display: flex;
+            position: relative;
+        }
+        .user img{
+            margin-left: 7vw;
+        }
+        .user strong{
+            font-size: 4vw;
+            margin-left: 2.5vw;
+        }
+        .user .ad{
+            width: 22vw;
+            height: 3vw;
+            line-height: 3vw;
+            font-size: 2.4vw;
+            font-weight: normal;
+            background: #e2e1e1;
+            position: absolute;
+            color: #000;;
+            border-radius: 8px;
+            bottom: 2vw;
+            left: 24.5vw;
+            text-align: center;
+        }
+        .user :nth-child(4){
+            left: 48vw;
+            width: 15vw;
+            font-size: 2.2vw;
+        }
+        /* 虚拟信息 */
+        #xn{
+            background: #f5f5f5;
+        }
+        #xn p{
+            color: #808080;
+            font-weight: bold;
+            font-size: 2.5vw;
+            letter-spacing: -.3vw;           
+        }
+        .good_nav strong{
+            font-size: 4.5vw;
+        }
+        .sub{
+            font-size: 2vw;
+            font-weight: bold;
+        }
+        #xb{
+            margin-top: -4vw;
+        }
+        /* 会员信息 */
+        #vip{
+            background: linear-gradient(to right,#f6b25b,#f47614);
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #vip img{
+            width: 50%;
+            padding: 2vw 2.5vw;
+            padding-right: 1.5vw;
+        }
+        #vip h5{
+            margin-left: 5vw;
+            margin-top: -9.5vw;
+            font-size: 3vw;
+            color: #fefbe2;
+            margin-bottom: -4vw;
+        }
+        #vip .more{
+            color: #fff;
+            font-size: 3vw;
+        }
+        .cate{
+            background: #fff;
+            border-radius: 2.5%;  
+            display: flex;
+            width: 47.5%;
+            margin: 2vw 1vw;
+        }
+        .cate .txt{
+            position: relative;
+        }
+        .cate span{          
+            display: flex;       
+        }
+        .cate img{
+            margin: 2vw;
+            margin-left: 4vw;
+        }
+        .nm{
+            font-size: 4vw;
+            margin-left: 5vw;
+            margin-top: 3vw;
+            color: #343434;
+            font-weight: bold;
+        }
+        #desc{
+            margin-left: 5.3vw;
+            margin-top: -3vw;
+            font-size: 2.5vw;
+            color: #e3914f;
+            font-weight: bold;
+        }
+        /* 商品信息 */
+        .sev .good_nav{
+            width: 20%;
+        }
+        .sev .good_bk{
+            border-top: 1px solid #eeeeee;
+        }
+        .sev .span{
+            color: #808080;
+            font-size: 3vw;
+            margin-left: 10vw;
+            font-weight: bold;
+        }
+        .span strong{  
+            color: #000; 
+            padding-right: 10.5vw;
+        }
+        .span .st_bk{  
+            border-right: 1px solid #d2d2d2;
+        }
+        /* 评价晒单 */
+        .sev .shadow{
+            background: #f8f8f8;
+            border-radius: 2.5%;  
+            display: flex;
+            margin: 2vw;
+            margin-top: 2.5vw;
+        }
+        .shadow span{
+            font-size: 2.5vw;
+            display: flex;
+            color: #343434;
+        }
+        .shadow img{
+            width: 50%;
+            margin-left: 2.5vw;
+        }
+        .shadow .a{
+            width: 50%;
+            margin-top: 1.5vw;
+            margin-bottom: 1.5vw;
+            padding: 1vw;
+        }
+        .shadow .txt{
+            display: flex;
+        }
+        .txt .name{
+           margin-top: .1vw;
+           margin-left: -3vw;
+       }
+       .txt .desc-a{
+           margin-top: 2.8vw;
+           margin-left: -18.8vw;
+           color: #727272;
+       }
+       .desc-a .num{
+           color: #ea6a0a;
+       }
+        /* 服务选择 */
+        .sev{
+            background-color: #fff; 
+            margin: 2.5vw;
+            border-radius: 2.5%;
+            padding-bottom: .5vw;
+        }
+        .sev h5{
+            padding: 0 3vw;
+            margin-left: 2.8vw;
+            padding-top: 2.2vw;
+            margin-bottom: -.5vw;
+        }
+        .sev .more{
+            margin-left: 61vw;
+            font-size: 3vw;
+            color: #b8b8b8;
+        }
+        .sev ul{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .sev li{
+            width: 25%; 
+            text-align: center; 
+        }
+        .sev svg{         
+            color: #494949;
+            font-size: 5vw;
+            margin: 0 auto; 
+        }
+        .sev p{
+            font-size: 2.8vw;
+            color: #494949;
+            margin: 0 auto;
+            margin-top: -3vw;
+            margin-bottom: -2vw;
+        }
+        .play{
+            margin-bottom: 3vw;
+        }
+        /* 精选推荐 */
+        .mlb{
+            font-size: 3.5vw;
+            margin-left: 6vw;
+        }
+        /* 下导航栏 */
+        #bnav{
+            position: fixed; 
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff; 
+            z-index: 9;
+        }
+        body{
+            margin-bottom: 7.82vh; 
+        }    
+        #bnav ul{
+            display: flex;
+        }
+        #bnav li{
+            width: 20%; 
+            text-align: center; 
+        }
+        #bnav svg{         
+            color: #494949;
+            font-size: 5vw;
+            margin: 0 auto; 
+        }
+        #bnav span{
+            font-size: 2.8vw;
+            color: #494949;
+            margin: 0 auto;
+            margin-top: -3vw;
+            margin-bottom: -2vw;
+        } 
+        #bnav p{
+            font-size: 2.8vw;
+            color: #494949;
+            margin: 0 auto;
+            margin-top: -3vw;
+            margin-bottom: -2vw;
+        }
+        .mySwiper{ 
+            margin: 2.5vw;
+            border-radius: 2.5%;
+        }     
+        .mySwiper img{
+            width: 100%;
+        }  
+         /* 商品列表 */
+        .section{
+            padding: 0;
+            margin: 0;
+        }
+        .md{
+            position: relative;
+            width: 100%;
+            padding: 2vw;
+            text-align: center;
+            font-weight: bold;
+            font-size: smaller;
+            letter-spacing: -1.8px;
+            margin-bottom: 3vw;
+        }
+        .tlist{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .tlist li{
+            width: 45%;
+            height: 30vh;
+            background: #fff;
+            margin:1.5vw 2.5vw; 
+            border-radius: 5%;
+        }
+        .list .txt{
+            display: flex;
+            flex-grow: wrap;
+        }
+        .list img{
+            width: 40%;
+            margin-left: 3.5vw;
+        }
+        .list .a{
+            width: 50%;
+            margin-top: 1.5vw;
+            margin-bottom: 1.5vw;
+            padding: 1vw;
+        }
+        .tlist li img{
+            width: 80%;
+            margin-bottom: -2vw;
+        }
+        .tlist li span{
+            width: 25vw;
+            font-size: 3vw; 
+            line-height: 3vw;
+            text-align: center;
+            font-weight: bold;
+            padding: 4.5vw;
+        }
+        .c1m1 img{
+            margin: 5vw auto;
+            width: 30%;
+            height: 50%;
+        }
+        .c1m2 img{ /* 长图片 */
+            margin: 10vw auto;
+            width: 50%;
+            height: 35%;
+        }
+        .c1m3 img{ /* 正方形图片 */
+            margin: 4vw auto;
+            width: 30%;
+            height: 42.5%;
+        }
+        .tlist li{
+            position: relative;
+        }
+        .txt .tname{
+            font-size: 3.5vw;
+            position: absolute;
+            width: 100%;
+            bottom: 18vw;
+            left: 0;
+            text-align: left;
+        }
+        .txt .desc{
+            font-size: 2.5vw;
+            font-weight: normal;
+            color: #808080;
+            position: absolute;
+            width: 100%;
+            bottom: 12vw;
+            left: 0;
+            text-align: left;
+        }
+        .txt .price{
+            font-size: 3.5vw;
+            position: absolute;
+            left: -7vw;
+            bottom: -.5vw;
+            padding: 3vw;
+        }
+        .txt .ad{
+            width: 7vw;
+            height: 3vw;
+            line-height: 3vw;
+            font-size: 2.4vw;
+            padding-left:1vw;
+            padding-top: .3vw;
+            padding-bottom: .3vw;
+            font-weight: normal;
+            background: #f3f3f3;
+            position: absolute;
+            color: #747474;
+            border-radius: 25%;
+            bottom: 2vw;
+            right: 0;
+        }  
+</style>
+</head>
+<body>
+    <header id="header">
+        <div>
+            <img src="./img/my-head.png">               
+        </div>
+         <span id="hphoto"><img src="./img/my-head.png"><span>渔夫和鱼</span></span>
+         <span>会员码</span>
+         <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-erweimaQRcode"></use>
+          </svg>    
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-shezhi"></use>
+          </svg>   
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-pingjia"></use>
+          </svg>   
+    </header>
+    <div class="user"> 
+        <a href="#"><img src="./img/my-head.png"></a>
+        <span class="xm"><strong>渔夫和鱼</strong></span>
+        <span class="ad">小米ID 2557467217</span>
+        <span class="ad">勋章1枚 ></span>
+    </div>  
+    <div class="sev" id="xn">
+        <ul>
+            <li class="good_nav">
+                <a href="#">
+                    <span>
+                        <strong>255</strong>
+                        </span>               
+                <p>米金</p>
+                </a>
+            </li>
+            <li class="good_nav">
+                <a href="#">
+                    <span>
+                        <strong>4</strong>
+                </span>                  
+                <p>优惠劵</p>
+                </a>
+            </li>
+            <li class="good_nav">
+                <a href="#">
+                    <span class="sub">
+                        <strong>0</strong>元
+                </span>                  
+                <p id="xb">红包</p>
+                </a>
+            </li>
+            <li class="good_nav">
+                <a href="#">
+                    <span class="sub">
+                        <strong>20</strong>万元
+                </span>                  
+                <p id="xb">最高额度</p>
+                </a>
+            </li>
+            <li class="good_nav">
+                <a href="#">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-qianbao"></use>
+                  </svg>
+                </span>                  
+                <p>钱包</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sev" id="vip">
+        <a href="#"><img src="./img/my-vip.png"></a>
+        <h5>Lv.1 城市会员
+            <a href="#" class="more">></a></h5>
+            <div class="cate">    
+                <div class="txt"> 
+                    <span class="nm">米金星球</span>
+                    <span id="desc">1米金待领取</span>
+                </div>
+                <a href="#"> <img src="./img/my-earth.png" class="a"></a>
+            </div>
+            <div class="cate">             
+                <div class="txt"> 
+                    <span class="nm">米金商城</span>
+                    <span id="desc">买前先兑劵</span>
+                </div>
+                <a href="#"> <img src="./img/my-shop.png" class="a"></a>
+            </div>      
+    </div>
+
+    <div class="sev">
+        <span class="span">收藏 <strong class="st_bk">0</strong></span>
+        <span class="span">足迹 <strong class="st_bk">47</strong></span>
+        <span class="span">关注 <strong>0</strong></span>
+        <ul class="good_bk">
+        </ul>
+        <div class="shadow">
+            <a href="#"> <img src="./img/my-pj.png" class="a"></a>
+            <div class="txt"> 
+                <span class="name"><strong>评价晒单得米金</strong></span>
+                <span class="desc-a">完成评价最多可得<span class="num">35</span>米金</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="sev">
+        <h5>服务
+            <a href="#" class="more">查看更多 ></a></h5>
+        <ul class="play">
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-teshuanzhuang"></use>
+                          </svg>
+                        </span>               
+                <p>一键安装</p>
+                </a>
+            </li>   
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-a-changyong_qiehuanfuben"></use>
+                          </svg>
+                        </span>               
+                <p>一键退换</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-weixiu"></use>
+                          </svg>
+                        </span>               
+                <p>一键维修</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-keylinetubiao-33"></use>
+                          </svg>
+                        </span>               
+                <p>服务进度</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-icon-xiaomiguishu"></use>
+                          </svg>
+                        </span>               
+                <p>小米之家</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-kefu"></use>
+                          </svg>
+                        </span>               
+                <p>客服中心</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-cycle"></use>
+                          </svg>
+                        </span>               
+                <p>以旧换新</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-dianchi"></use>
+                          </svg>
+                        </span>               
+                <p>手机电池</p>
+                </a>
+            </li>
+        </ul>       
+    </div>
+
+    <nav id="bnav">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shouye"></use>
+                          </svg>
+                        </span>               
+                <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="classification.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fenlei"></use>
+                  </svg>
+                </span>                  
+                <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="service.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fuwu"></use>
+                  </svg>
+                </span>                  
+                <p>服务</p>
+                </a>
+            </li>
+            <li>
+                <a href="car.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche"></use>
+                  </svg>
+                </span>                  
+                <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="my.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-wode1"></use>
+                  </svg>
+                </span>                  
+                <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Swiper-ad  280-autoplay-->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./img/my-ad1.png"></div>
+          <div class="swiper-slide"><img src="./img/my-ad2.png"></div>
+          <div class="swiper-slide"><img src="./img/my-ad3.png"></div>
+          <div class="swiper-slide"><img src="./img/my-ad4.png"></div>
+          <div class="swiper-slide"><img src="./img/my-ad5.png"></div>
+          <div class="swiper-slide"><img src="./img/my-ad6.png"></div>
+          <div class="swiper-slide"><img src="./img/my-ad7.png"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <section class="section">
+            <h5 class="mlb">为你精选</h5>
+        <ul class="tlist">
+            <li>
+                <a href="goods.html" class="c1m1">
+                    <img src="./img/car-l1.jpg" class="a">
+                </a>
+                <div class="txt"> 
+                    <span class="tname">小米手机复刻卡针吊坠</span>
+                    <span class="desc">致敬经典，印证小米初心；...</span>
+                    <span class="price">￥1</span>
+                    <div class="ad">看相似</div>
+                </div>    
+            </li>
+            <li>
+                <a href="#" class="c1m1">
+                    <img src="./img/car-l2.png">
+                </a>
+                <div class="txt"> 
+                    <span class="tname">Xiaomi 12 Pro 天玑版</span>
+                    <span class="desc">全球首发天玑9000+ | 叶脉...</span>
+                    <span class="price">￥2999起</span>
+                    <div class="ad">看相似</div>
+                </div>   
+            </li>
+            <li>
+                <a href="#" class="c1m2">
+                    <img src="./img/car-l3.jpg">
+                </a>
+                <div class="txt"> 
+                    <span class="tname">Xiaomi智能家庭屏 10</span>
+                    <span class="desc">超清画质</span>
+                    <span class="price">￥799</span>
+                    <div class="ad">看相似</div>
+                </div>   
+            </li>
+            <li>
+                <a href="#" class="c1m3">
+                    <img src="./img/car-l4.jpeg">
+                </a>
+                <div class="txt"> 
+                    <span class="tname">扫地机器人</span>
+                    <span class="desc">超大吸力，实时清扫</span>
+                    <span class="price">￥1399起</span>
+                    <div class="ad">看相似</div>
+                </div>   
+            </li>
+            <li>
+                <a href="#" class="c1m2">
+                    <img src="./img/car-l5.jpg">
+                </a>
+                <div class="txt"> 
+                    <span class="tname">小米小爱音箱play</span>
+                    <span class="desc">听音乐、语音遥控家电</span>
+                    <span class="price">￥99 ￥109</span>
+                    <div class="ad">看相似</div>
+                </div>   
+            </li>
+            <li>
+                <a href="#" class="c1m3">
+                    <img src="./img/car-l6.jpg">
+                </a>
+                <div class="txt"> 
+                    <span class="tname">米家激光投影电视 1S 4K</span>
+                    <span class="desc"> 性价比超高</span>
+                    <span class="price">￥1399起</span>
+                    <div class="ad">看相似</div>
+                </div>   
+            </li>
+            <li>
+                <a href="#" class="c1m2">
+                    <img src="./img/car-l7.jpg">
+                </a>
+                <div class="txt"> 
+                    <span class="tname">小米电视 大师77</span>
+                    <span class="desc">超清画质，美的享受</span>
+                    <span class="price">￥2699起</span>
+                    <div class="ad">看相似</div>
+                </div>   
+            </li>
+            <li>
+                <a href="#" class="c1m2">
+                    <img src="./img/car-l8.jpg">
+                </a>
+                <div class="txt"> 
+                    <span class="tname">小米11雷签4699</span>
+                    <span class="desc">美的体验</span>
+                    <span class="price">￥4699起</span>
+                    <div class="ad">看相似</div>
+                </div>   
+            </li>
+        </ul>
+    </section>
+    <script>
+        var jarr=[{
+            name:"#icon-zhifuqianbao",
+            desc:"待付款"
+        },{
+            name:"#icon-daishouhuo",
+            desc:"待收货"
+        },{
+            name:"#icon-shuangxiangpingjia",
+            desc:"待评价"
+        },{
+            name:"#icon-tuihuanhuo1",
+            desc:"售货/退换"
+        },{
+            name:"#icon-quanbudingdan",
+            desc:"全部订单"
+        }]
+
+        var tlist=document.querySelector(".good_bk");
+        
+        jarr.forEach((v,i)=>{
+            var nli=document.createElement("li");
+            nli.className="good_nav";
+            nli.innerHTML=`<a href="#">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="${v.name}"></use>
+                  </svg>
+                </span>                  
+                <p>${v.desc}</p>
+                </a>
+            `; 
+            tlist.appendChild(nli);
+        })
+    </script>
+
+    <script>
+        var photo=hphoto.querySelector("img");
+
+        window.onscroll=()=>{
+            var st=document.documentElement.scrollTop; /* scrollTop：看不到页面的实时高度 */
+            if(st>header.offsetHeight){  /* offsetHeight: 获取高度(包括padding和border) */
+                header.style.position="fixed"; 
+                hphoto.style.display="block";
+                photo.style.display="block";
+            } 
+            else{
+                header.style.position="static";
+                hphoto.style.display="none";  
+            }
+        }
+    </script>
+
+    <!-- Swiper -->
+    <script src="./js/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
+</body>
+</html>

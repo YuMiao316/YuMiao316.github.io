@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover"> 
+    <title>316于淼-商品分类</title>
+    <link rel="stylesheet" href="css/pub2.css">
+    <script src="./fonts/iconfont.js"></script>
+    <style>
+        /* 滚动条 */
+        html{
+            line-height: 150%;           
+        }
+        .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+        }
+        /* 搜索栏 */
+        #header{
+            display: flex;
+            line-height: 3vh;
+            margin-top: 4.54vh;
+            margin-left: 20px;
+            margin-right: 28px;
+        }
+        #header>span:first-child{
+            font-size: 14px;
+            padding: 0 7px;
+            color: #999;
+            line-height: 3vh;
+        }
+        #header div{
+            flex-grow: 1;
+            background-color: #eee;
+            border-radius: 12px;
+            display: flex;
+        }
+        #header div span{
+            font-size: 14px;
+            margin: 0 6px;
+            line-height: 3vh;
+        }
+        #header input{
+            border: none;
+            background-color: #eee;
+            line-height: 3vh;
+            flex-grow: 1;
+            border-radius: 12px;
+        }
+        #header svg:nth-of-type(1){
+            padding: 1vw 1.5vw;
+        }
+        svg:nth-child(2){
+            padding: 1vw;
+            margin-right: -4vw;
+        }
+        /* main */
+        .ht{
+            display: flex;
+        }
+        .ml{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        main {
+            margin: 1vw;
+            margin-left: 2.7vw;
+            margin-right: 1.9vw;
+        }
+        h5{
+            font-size: 4vw;
+        }
+        .txt{
+            font-size: 14px;
+            margin: 0 10px;;
+            font-weight: bold;
+            line-height: 3vh;
+        }
+        main .list{
+            background: #f8f8f8;
+            border-radius: 2.5%;  
+            display: flex;
+            margin-bottom: 1.9vw;
+            margin-right: 6.5vw;            
+        }
+        main .txt{
+            display: flex;
+            position: absolute;
+        }
+        main h5{
+           color: rgb(50, 50, 50);
+           font-weight: bold;
+           margin-top: 2.7vw;
+        }
+       .txt span{
+           font-size: 12vw;
+           position: relative;
+           margin-top: 11vw;
+       }
+       .txt .name{
+           position: relative;
+           margin-top: 5vw;
+           margin-left: 20vw;
+       }
+       .txt .price-a{
+           margin-left: -15vw;
+       }
+       .txt .price-b{
+           margin-left: -34vw;
+       }
+       .txt .price-c{
+           margin-left: -33.5vw;
+       }
+        .xm-civi2 img{
+            width: 91%;
+            height: 70%;
+            display: block;
+            border-radius: 5%;
+            margin-top: 3vw;
+        }
+        /* 三个矩形 */
+        .list .txt{
+            display: flex;
+            flex-grow: wrap;
+        }
+        .list span{
+            font-size: 3vw;
+            display: flex;
+            color: #343434;
+        }
+        .list img{
+            width: 40%;
+            margin-left: 3.5vw;
+        }
+        .list .a{
+            width: 50%;
+            margin-top: 1.5vw;
+            margin-bottom: 1.5vw;
+            padding: 1vw;
+        }
+        .list .b{
+            width: 12%;
+            height: 90%;
+            margin-top: .7vw;
+            margin-bottom: .1vw;
+            padding: .8vw;
+            padding-left: 7vw;
+            padding-bottom: 3vw;
+        }
+        .list .c{
+            width: 35%;
+            height: 80%;
+            margin-bottom: 1.5vw;
+            padding: 2vw;
+            padding-left: 3.2vw;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        img{
+            display: block;
+        }
+        /* 9宫格 */
+        .list2{
+            width: 78vw; 
+            overflow: hidden; 
+            display: flex;
+            flex-wrap: wrap;
+        }  
+        .list2 li{
+            width: 25vw;
+            padding-left: 1vw;
+            padding-right: 3vw;
+            margin-right: -4.7vw;;  
+            margin-top: 2.3vw;
+        }
+        .list2 img{
+            width: 80%;
+            margin-bottom: -2vw;
+        }
+        /* 9宫格文字调整 */
+        .list2 span{
+            width: 25vw;
+            font-size: 3vw; 
+            line-height: 3vw;
+            text-align: center;
+            font-weight: bold;
+            padding: 4.5vw;
+        }
+        .r2m1 span{
+            padding: 1vw;
+        } 
+        .r1m2  span{
+            padding: 6vw;
+        }
+        .r3m2 span{
+            padding: 6vw;
+        }
+        .r4m3 span{
+            padding: 6vw;
+        }     
+        .r2m3 span{
+            padding: 3.5vw;
+        }     
+        /* 边栏 */
+        .left-list ul{
+            background-color: #fff;
+            width: 30vw;
+            margin-right: -7.2vw;
+        }
+        .left-list li{
+            font-size: 3vw;
+            background-color: #fff;
+            width: 50%;
+            padding: 0;
+            margin: 4.7vw;
+            color: #5d5d5d;
+            text-align: left;
+        }
+        .left-list :nth-child(1){
+            margin-top: 8.5vw;
+            margin-bottom: 5.5vw;
+        } 
+        /* 边栏变化：电脑 */
+        .left-list li:nth-child(n):hover{ 
+            margin: 0;
+            padding: 4vw;
+            border-left: 1vw solid rgb(232, 130, 14);
+        } 
+        /* 边栏变化：手机 */
+        .left-list-phone{ 
+            margin: 0;
+            padding: 4vw;
+            border-left: 1vw solid rgb(232, 130, 14);
+        } 
+        /* 下导航栏 */
+        #bnav{
+            position: fixed; 
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff; 
+            z-index: 9;
+        }
+        body{
+            margin-bottom: 7.82vh; /* 值为下导航的高度 */
+        }    
+        #bnav ul{
+            border-top: 1px solid #eeeeee;
+            display: flex;
+        }
+        #bnav li{
+            width: 20%; 
+            text-align: center; 
+        }
+        #bnav svg{         
+            color: #494949;
+            font-size: 5vw;
+            margin: 0 auto; 
+        }
+        #bnav p{
+            font-size: 2.8vw;
+            color: #494949;
+            margin: 0 auto;
+            margin-top: -3vw;
+            margin-bottom: -2vw;
+        }     
+    </style>       
+</head>
+<body>    
+    <header id="header">
+        <div>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-sousuo"></use>
+              </svg>              
+            <input type="text" placeholder="搜索商品"> <!-- input type="text":文本输入框 -->
+        </div>
+         <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-xiaoxi"></use>
+          </svg>   
+    </header>
+    <div class="ht">
+        <aside class="left-list">
+            <ul>
+              
+            </ul>
+         </aside>
+    <main>
+        <div class="xm-civi2"><img src="./img/XIaomi CIVI2.png"></div>
+        <h5>精选推荐</h5>
+        <div class="list">
+            <a href="#"> <img src="./img/l1.png" class="a"></a>
+            <div class="txt"> 
+                <span class="name">Redmi 10A</span>
+                <span class="price-a">￥699起</span>
+            </div>
+        </div>
+        <div class="list">
+            <a href="#"> <img src="./img/l2.png" class="b"></a>
+            <div class="txt"> 
+                <span class="name">米家声波电动牙刷T100...</span>
+                <span class="price-b">￥49.9</span>
+            </div>
+        </div>
+        <div class="list">
+            <a href="#"> <img src="./img/l3.png" class="c"></a>
+            <div class="txt">
+            <span class="name">小米智能摄像机2 云台版</span>
+            <span class="price-c">￥229</span>
+            </div>
+        </div>
+        <ul class="list2">
+            <li>
+                <a href="#" class="r1m1">
+                    <img src="./img/car-l1.jpg">
+                    <span>充电宝</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="r1m2">
+                    <img src="./img/car-l2.png">
+                    <span>台灯</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="r1m3">
+                    <img src="./img/index-3.png">
+                    <span>剃须刀</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="r2m1">
+                    <img src="./img/index-4.png">
+                    <span>AirDots 3Pr...</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="r2m2">
+                    <img src="./img/index-4.png">
+                    <span>吹风机</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="r2m3">
+                    <img src="./img/index-4.png">
+                    <span>启智积木</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="r3m1">
+                    <img src="./img/index-7.png">
+                    <span>充电宝</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="r3m2">
+                    <img src="./img/car-l2.png">
+                    <span>手表</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="r3m3">
+                    <img src="./img/index-8.png">
+                    <span>手机</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="r4m1">
+                    <img src="./img/index-18.png">
+                    <span>擎天柱</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="r4m2">
+                    <img src="./img/index-18.png">
+                    <span>吹风机</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="r4m3">
+                    <img src="./img/index-18.png">
+                    <span>小刀</span>
+                </a>
+            </li>
+        </ul>
+    </main>
+    </div>
+   
+    <nav id="bnav">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shouye"></use>
+                          </svg>
+                        </span>               
+                <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="classification.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fenlei1-copy"></use>
+                  </svg>
+                </span>                  
+                <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="service.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fuwu"></use>
+                  </svg>
+                </span>                  
+                <p>服务</p>
+                </a>
+            </li>
+            <li>
+                <a href="car.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche"></use>
+                  </svg>
+                </span>                  
+                <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="my.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-wode"></use>
+                  </svg>
+                </span>                  
+                <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+
+        var jarr=[{
+            name:"推荐"
+        },{
+            name:"Xiaomi手机",
+        },{
+            name:"Redmi手机",
+        },{
+            name:"游戏手机",
+        },{
+            name:"电脑平板",
+        },{
+            name:"智能穿戴",
+        },{
+            name:"电视",
+        },{
+            name:"大家电",
+        },{
+            name:"小家电",
+        },{
+            name:"智能家居",
+        },{
+            name:"出行运动",
+        },{
+            name:"日用百货",
+        },{
+            name:"儿童用品",
+        },{
+            name:"有品精选",
+        },{
+            name:"小米服务",
+        }]
+    
+        var aside=document.querySelector("aside ul");
+        console.log(aside);
+        jarr.forEach((v,i)=>{
+            var nli=document.createElement("li");
+            nli.innerHTML=`
+                    ${v.name}
+                `;
+            aside.appendChild(nli);
+        })
+    </script>
+
+    <script>   
+        var bl = document.querySelectorAll(".left-list li");
+        
+        for(let i=0;i<bl.length;i++){
+          bl[i].ontouchstart=e=>{
+              for(let j=0;j<bl.length;j++){
+              bl[j].classList.remove("left-list-phone");; //--排他，先干掉全部    
+           } 
+              bl[i].classList.toggle("left-list-phone");
+          }} 
+    </script>
+</body>
+</html>

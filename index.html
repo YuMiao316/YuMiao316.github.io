@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover"> 
+    <title>20001010316于淼-首页</title>
+    <link rel="stylesheet" href="css/pub2.css">
+    <link rel="stylesheet" href="./js/swiper/swiper-bundle.min.css">
+    <script src="./fonts/iconfont.js"></script>
+    <style>
+        /* 滚动条 */
+        html{
+            line-height: 150%;           
+        }
+        body{
+            background: url(./img/index-headbg.jpg) no-repeat;
+        }
+        .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+        }
+        /* 搜索栏 */
+        #header{
+            display: flex;
+            line-height: 3vh;
+            margin-top: 4.54vh;
+            margin-left: 20px;
+            margin-right: 28px;
+            color: #fff;
+        }
+        #header>span:first-child{
+            font-size: 14px;
+            padding: 0 7px;
+            color: #999;
+            line-height: 3vh;
+        }
+        #header div{
+            flex-grow: 1;
+            background-color: #fff;
+            border-radius: 12px;
+            display: flex;
+        }
+        svg:nth-of-type(1){
+            padding-top: 1vw;
+            padding-left: 1.5vw; 
+        }
+        svg:nth-child(1){
+            padding-right: 2vw;
+        }
+        #header svg:nth-of-type(2){
+            padding: 1vw 3vw;
+        }
+        #header div:nth-child(2){
+            color: #999 ;
+        }
+        #header svg:nth-of-type(3){
+            padding: 1vw;
+            margin-right: -4vw;
+        }
+        #header input{
+            border: none;
+            background-color: #fff;
+            line-height: 3vh;
+            flex-grow: 1;
+            border-radius: 12px;/* 前面的圆角div,后面的圆角input */
+        }
+        /* 上背景 */
+        .bg{
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 2vw;
+            background-image: url(./img/index-headbg.jpg);
+        }
+        .bg img{
+            width: 100%;
+        }
+        .bg span{
+            color: #fff;
+        }
+        .bg .foot{
+            width: 100%;
+            height: 15vw;
+        }
+        .first{
+            font-weight:bold;
+            font-style: italic;
+            font-size: 6.5vw;
+            letter-spacing: -.5vw;
+            margin-left: 20vw;
+        }
+        .bg :nth-child(2){ /* 第2个span */
+            font-size: 4vw;
+            font-weight: bold;
+            margin-left: 34vw;
+        }
+        /* 推荐系列 */
+        .hot{
+            display: flex;
+            margin: 0 1.8vw;
+            margin-top: -10vw;
+            
+        }
+        .recommend{
+            width: 33%;
+            background: #fdf4f3;
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .recommend .name{
+            font-size: 3.5vw;
+            width: 100%;
+            text-align: center;
+        }
+        .recommend .desc{
+            color: #747474;
+            font-size: 2.5vw;
+            width: 100%;
+            text-align: center;
+            margin-top: -3.8vw;
+        }
+        #mid{
+            margin-top: -1vw;
+            z-index: 9;
+        }
+        #left{
+            width: 55%;
+            margin-left: 9vw;
+        }
+        #mid img{
+            width: 85%;
+            margin-left: 2.4vw;
+        }
+        #right{
+            width: 65%;
+            margin-left: 6.7vw;
+        }
+        /*  1行 */
+        .sign{
+            display: flex;
+        }
+        .sign li{
+            display: flex;
+            width: 33%;
+            text-align: center;
+            font-size: 3vw;
+            padding-bottom: 1vw;
+        }
+        .sign img{
+            width: 38%;
+            margin-left: 4.5vw;
+            padding: 2.8vw;
+            margin-top: -.5vw;
+            margin-right: -4.5vw;
+        }
+        /* 2行 */
+        .cate .swiper-slide{
+            font-size: 3vw;
+            text-align: center;
+            font-weight: bold;
+        }
+        .cate img{
+            width: 70%;
+            margin-left: 2.5vw;
+        }
+        /* 下导航栏 */
+        #bnav{
+            position: fixed; /* 设了之后宽度是内容的宽度 */
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff; 
+            z-index: 9;
+        }
+        body{
+            margin-bottom: 7.82vh; /* 值为下导航的高度 */
+        }    
+        #bnav ul{
+            border-top: 1px solid #eeeeee;
+            display: flex;
+        }
+        #bnav li{
+            width: 20%; 
+            text-align: center; 
+        }
+        #bnav svg{         
+            color: #494949;
+            font-size: 5vw;
+            margin: 0 auto; 
+        }
+        #bnav p{
+            font-size: 2.8vw;
+            color: #494949;
+            margin: 0 auto;
+            margin-top: -3vw;
+            margin-bottom: -2vw;
+            margin-left: -.5vw;
+        }
+        .mySwiper{ 
+            margin: 2.5vw;
+            border-radius: 2.5%;
+        }     
+        .mySwiper img{
+            width: 100%;
+        }        
+</style>
+</head>
+<body>
+    <header id="header">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-xiaomi1"></use>
+          </svg>
+        <div>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-sousuo"></use>
+            </svg>             
+            <input type="text" placeholder="Xiaomi 13 限量定制色"> 
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-saomiao"></use>
+              </svg>
+        </div>
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-erweimaQRcode"></use>
+        </svg> 
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-9xiaoxitongzhi"></use>
+        </svg>
+    </header> 
+    <div class="bg">
+        <span class="first">小米12.12 年终焕新季</span>
+        <span>至高优惠2500元</span>  
+        <img src="./img/bg-home.png">
+        <div class="foot"></div> 
+    </div>
+   
+    <!-- 推荐系列 -->
+    <div class="hot">
+    <div class="recommend">
+        <span class="name"><strong>Xiaomi Sound Pro</strong></span>
+        <span class="desc">赠米家夜灯2 蓝牙版 ></span>
+        <a href="#"><img src="./img/index-rec1.png" id="left"></a>
+    </div>
+    <div class="recommend" id="mid">
+        <span class="name"><strong>Xiaomi 13 系列</strong></span>
+        <span class="desc">至高24期免息 ></span>
+        <a href="#"><img src="./img/index-rec2.png"></a>
+    </div>
+    <div class="recommend">
+        <span class="name"><strong>MIUI 14</strong></span>
+        <span class="desc">锐意新生 ></span>
+        <a href="#"><img src="./img/index-rec3.png" id="right"></a>
+    </div>
+    </div>
+
+    <ul class="sign">
+        <li><a><img src="./img/True-circle.png"></a>官方商城</li>
+        <li><a><img src="./img/True-circle.png"></a>售后无忧</li>
+        <li><a><img src="./img/True-circle.png"></a>资质证照</li>
+    </ul>
+
+     <!-- 150-freemode -->
+     <div class="swiper cate">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><a><img src="./img/index-1.png"></a>小米上新</div>
+          <div class="swiper-slide"><a><img src="./img/index-2.png"></a>小米众筹</div>
+          <div class="swiper-slide"><a><img src="./img/index-3.png"></a>小米发布</div>
+          <div class="swiper-slide"><a><img src="./img/index-4.png"></a>小米影像</div>
+          <div class="swiper-slide"><a><img src="./img/index-5.png"></a>米金商城</div>
+          <div class="swiper-slide"><a><img src="./img/index-11.png"></a>米圈星球</div>
+          <div class="swiper-slide"><a><img src="./img/index-12.png"></a>以旧换新</div>
+          <div class="swiper-slide"><a><img src="./img/index-13.png"></a>官方服务</div>
+          <div class="swiper-slide"><a><img src="./img/index-14.png"></a>教育优惠</div>
+          <div class="swiper-slide"><a><img src="./img/index-15.png"></a>省心优惠</div>
+        </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a><img src="./img/index-6.png"></a>生活电器</div>
+            <div class="swiper-slide"><a><img src="./img/index-7.png"></a>电脑/平板</div>
+            <div class="swiper-slide"><a><img src="./img/index-8.png"></a>手机</div>
+            <div class="swiper-slide"><a><img src="./img/index-9.png"></a>电视</div>
+            <div class="swiper-slide"><a><img src="./img/index-10.png"></a>空冰洗</div>
+            <div class="swiper-slide"><a><img src="./img/index-16.png"></a>智能穿戴</div>
+            <div class="swiper-slide"><a><img src="./img/index-17.png"></a>智能家居</div>
+            <div class="swiper-slide"><a><img src="./img/index-18.png"></a>生活酷玩</div>
+            <div class="swiper-slide"><a><img src="./img/index-19.png"></a>0元领卡</div>
+            <div class="swiper-slide"><a><img src="./img/index-20.png"></a>小米直播</div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    
+    <nav id="bnav">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shouye1"></use>
+                          </svg>
+                        </span>               
+                <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="classification.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fenlei"></use>
+                  </svg>
+                </span>                  
+                <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="service.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fuwu"></use>
+                  </svg>
+                </span>                  
+                <p>服务</p>
+                </a>
+            </li>
+            <li>
+                <a href="car.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche"></use>
+                  </svg>
+                </span>                  
+                <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="my.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-wode"></use>
+                  </svg>
+                </span>                  
+                <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Swiper-ad  280-autoplay-->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./img/my-ad1.png"></div>
+          <div class="swiper-slide"><img src="./img/my-ad2.png"></div>
+          <div class="swiper-slide"><img src="./img/my-ad3.png"></div>
+          <div class="swiper-slide"><img src="./img/my-ad4.png"></div>
+          <div class="swiper-slide"><img src="./img/my-ad5.png"></div>
+          <div class="swiper-slide"><img src="./img/my-ad6.png"></div>
+          <div class="swiper-slide"><img src="./img/my-ad7.png"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+     
+    <!-- Swiper -->
+    <script src="./js/swiper/swiper-bundle.min.js"></script>
+
+
+    <script>
+        var swiper = new Swiper(".cate", {
+          slidesPerView: 5, 
+          spaceBetween: 10,
+          freeMode: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
+    
+</body>
+</html>

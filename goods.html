@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover"> 
+    <title>316于淼-商品</title>
+    <link rel="stylesheet" href="css/pub2.css">
+    <link rel="stylesheet" href="./js/swiper/swiper-bundle.min.css">
+    <script src="./fonts/iconfont.js"></script>
+    <style>
+        /* 滚动条 */
+        html{
+            line-height: 150%;           
+        }
+        body{
+            background: #f3f3f3;
+        }
+        .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+        }
+        h5{
+            font-size: 3vw;
+        }
+        /* header */
+        .mySwiper img{
+            width: 100%;
+            height: 50%;
+        }
+        header span{
+            margin-top: -8vw;
+            z-index: 2;
+            position: fixed;
+            font-size: 2.5vw;
+            background: #737373;
+            border-radius: 12px;
+            width: 6.5vw;
+            height: 4.5vw;
+            text-align: center;
+            line-height: 4.5vw;
+            right: 4vw;
+            color: #fff;
+        }
+        /* 商品信息 */
+        .goods{
+            background: #fff;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .goods span:nth-of-type(1){
+            padding: .8vw;
+            padding-left: .5vw;
+            color: #f3593e;
+            font-weight: bold;
+        }
+        .goods sub{
+            font-size: 8vw;
+            color: #f3593e;
+            margin-left: 3vw;
+            margin-top: -4.5vw;
+            font-weight: bold;
+            display: flex;
+            padding-bottom: 4vw;
+        }
+        .goods span:nth-of-type(6){
+            padding-bottom: 2.8vw;
+        }
+        .goods span{
+            font-size: 2.5vw;
+            width: 100%;
+            margin: -1.5vw 0;
+            margin-left: 3vw;
+        }
+        .goods strong{
+            font-size: 3.2vw;
+            letter-spacing: -.2vw;
+        }
+        .goods svg{
+            font-size: 3.8vw;
+            margin-left: 52vw;
+        }
+        /* 商品相关 */
+        section ul{
+            display: flex;
+            flex-wrap: wrap;
+            background: #fff;
+        }
+        section li{
+            font-size: 2.5vw;
+            line-height: 5vw;
+            height: 5vw;
+            width: 80%;
+            margin: auto 0;
+            border-bottom: 1px solid #f6f6f6;
+            padding: 2vw;
+            padding-left: 0;
+        }
+        section ul:nth-of-type(1){
+            margin: 2.5vw 0;          
+        }
+        section h5{
+            padding: 1vw;
+            width: 10%;
+            text-align: center;
+        }
+        section li:last-of-type{
+            border: none;
+        }
+        section ul:last-child{
+            padding-bottom: 10vw;
+        }
+        .more{
+            margin-top: -5vw;
+            margin-left: 81vw;
+            display: flex;
+            color: grey;
+        }
+        .amount,.address{
+            color: #cf7937;
+        }
+        .amount{
+            margin-left: 23.5vw;
+        }
+        .address{
+            width: 100%;
+            display: block;
+        }
+        .time{
+            color: grey;
+            margin-left: .3vw;
+        }
+        /* 下导航栏 */
+        #bnav{
+            position: fixed; 
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff; 
+            z-index: 9;
+        }
+        body{
+            margin-bottom: 7.82vh; /* 值为下导航的高度 */
+        }    
+        #bnav ul{
+            border-top: 1px solid #eeeeee;
+            display: flex;
+        }
+        #bnav li{
+            width: 16%; 
+            text-align: center; 
+        }
+        #bnav svg{         
+            color: #494949;
+            font-size: 5vw;
+            margin: 0 auto; 
+        }
+        #bnav p{
+            font-size: 2.8vw;
+            color: #494949;
+            margin: 0 auto;
+            margin-top: -3vw;
+            margin-bottom: -2vw;
+        }
+        .button{
+            background: linear-gradient(to right, #f47900,#f35c37);
+            margin: 1vw 0;
+            width: 60%;
+            margin-left: 10vw;
+            margin-right: 5vw;
+            text-align: center;
+            border-radius: 15vw;
+            font-size: 3vw;
+            padding-top: 1vw;
+            color: #fef3e9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <!-- 350-rtl -->
+    <div dir="rtl" class="swiper mySwiper">  
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./img/good-4.jpg"></div>
+          <div class="swiper-slide"><img src="./img/good-3.jpg"></div>
+          <div class="swiper-slide"><img src="./img/good-2.jpg"></div>
+          <div class="swiper-slide"><img src="./img/good-1.jpg"></div>
+          <div class="swiper-slide"><img src="./img/good-5.jpg"></div>         
+        </div>     
+      </div>
+      <span>1/5</span>
+    </header>
+
+    <div class="goods">
+    </div>
+
+    <section>
+        <ul>
+            <h5>分期</h5>
+            <li>低至0.04元 × 24期<a href="#" class="more">></a></li>
+        </ul>
+        <ul>
+            <h5>已选</h5>
+            <li>小米手机1复刻卡针吊坠<a href="#" class="more">></a></li>
+            <h5>送至</h5>
+            <li><svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-dizhi"></use></svg>
+                锦州市 凌河区<a href="#" class="more">></a></li>
+            <h5>门店</h5>
+            <li>小米之家辽宁锦州凌河区百货大楼专卖店<span class="amount">暂时缺货</span><a href="#" class="more">></a>
+                <span class="address">距离1.63km</span>
+                <span class="time">9:30-21:00</span>
+            </li>
+        </ul>
+    </section>
+
+    <nav id="bnav">
+        <ul>
+            <li>
+                <a href="#">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-kefu1"></use>
+                  </svg>
+                </span>                  
+                <p>客服</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fuwu"></use>
+                  </svg>
+                </span>                  
+                <p>收藏</p>
+                </a>
+            </li>
+            <li>
+                <a href="car.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche"></use>
+                  </svg>
+                </span>                  
+                <p>购物车</p>
+                </a>
+            </li>
+            <span class="button"><strong>感恩有你</strong></span>
+        </ul>
+    </nav>
+
+    <script src="./js/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+    
+    <script>
+        var jarr=[{
+            sign:"￥",
+            name:"小米手机1复刻卡针吊坠",
+            desc1:"复刻经典, 小米手机1等比微缩",
+            desc2:"隐藏卡针设计, 使用有趣",
+            desc3:"限量编号, 唯一珍藏"
+        }]
+
+        var newgood=document.querySelector(".goods");
+        newgood.innerHTML=`<span>${jarr[0].sign}</span>
+        <span><sub>1</sub></span>
+        <span><strong>${jarr[0].name}</strong><svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-shangchuan"></use>
+          </svg></span>
+        <span>${jarr[0].desc1}</span>
+        <span>${jarr[0].desc2}</span>
+        <span>${jarr[0].desc3}</span>
+            `; 
+    </script>
+</body>
+</html>

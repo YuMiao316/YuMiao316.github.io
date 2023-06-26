@@ -1,0 +1,27 @@
+body,h1,h2,h3,h4,h5,h6,ul,p,form,dl,dd,dt{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color:  orange;
+}
+a:visited{ /* 点击过的超链接 */
+    color:#000;
+}
+img{
+    border: none;
+    display: block;
+}
+      /* 移动端特有 */
+body{
+    min-width: 320px; /* 最小宽度 */
+    margin: 0 auto; /* 居中，和max-width一起用 */
+    overflow-x: hidden;
+}
+html{
+    font-size: 5.4vw; /* rem的实现, 整个浏览器5.4%，一共100份 也可以用 media jqur  */
+}

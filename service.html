@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover"> 
+    <title>316于淼-服务</title>
+    <link rel="stylesheet" href="css/pub2.css">
+    <script src="./fonts/iconfont.js"></script>
+    <style>
+        /* 滚动条 */
+        html{
+            line-height: 150%;           
+        }
+        body{
+            background: #f5f5f5;
+        }
+        .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+        }
+        /* 搜索栏 */
+        #header{
+            display: flex;
+            line-height: 3vh;
+            margin-top: 4.54vh;
+            margin-left: 20px;
+            margin-right: 28px;
+        }
+        #header>span:first-child{
+            font-size: 14px;
+            padding: 0 7px;
+            color: #999;
+            line-height: 3vh;
+        }
+        #header div{
+            flex-grow: 1;
+            background-color: #fff;
+            border-radius: 12px;
+            display: flex;
+        }
+        #header div span{
+            font-size: 14px;
+            margin: 0 6px;
+            line-height: 3vh;
+        }
+        #header input{
+            border: none;
+            background-color: #fff;
+            line-height: 3vh;
+            flex-grow: 1;
+            border-radius: 12px;
+        }
+        svg:nth-of-type(1){
+            padding-top: 1vw;
+            padding-left: 1.2vw; 
+            padding-right: 1vw;
+        }
+        #header :last-child{
+            margin-right: -4vw;
+            margin-left: 4vw;
+        }
+        /* 服务选择 */
+        #play{
+            padding: 2.8vw 0;
+        }
+        .sev{
+            background-color: #fff; 
+            margin: 2.5vw;
+            border-radius: 8px;
+            padding-bottom: .5vw;
+        }
+        .sev ul{
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 2.5%;  
+        }
+        .sev li{
+            width: 25%; 
+            text-align: center; 
+        }
+        .sev ul{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .sev svg{         
+            color: #494949;
+            font-size: 5vw;
+            margin: 0 auto; 
+        }
+        .sev p{
+            font-size: 2.8vw;
+            color: #494949;
+            margin: 0 auto;
+            margin-top: -3vw;
+            margin-bottom: -2vw;
+        } 
+        h5{
+            font-size: 3.8vw;
+            margin-left: 3.5vw;
+            margin-bottom: -2vw;
+        }
+        .txt{
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 3vh;
+        }
+        /* 会员信息 */
+        #selet{
+            background: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .cate{
+            background: #fff;
+            border-radius: 8px;  
+            display: flex;
+            width: 47.5%;
+            margin: 2vw 1vw;
+        }
+        .cate .txt{
+            position: relative;
+        }
+        .cate span{          
+            display: flex;       
+        }
+        .nm{
+            font-size: 3.2vw;
+            margin-left: 3vw;
+            margin-top: 3vw;
+            color: #343434;
+            font-weight: bold;
+        }
+        #desc{
+            margin-left: 2.8vw;
+            margin-top: -2vw;
+            font-size: 2.5vw;
+            color: #b8b8b8;
+            font-weight: bold;
+        }
+        /* 服务 */
+        h5 .more{
+            margin-left: 60.5vw;
+            font-size: 3vw;
+            color: #b8b8b8;  
+        }
+        #bg{
+            background-image: url(./img/play-bg.jpeg);
+            height: 50vw;
+            color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        #bg strong{
+            width: 100%;
+            position: absolute;
+            bottom: 10vw;
+            left: 3vw;
+            font-size: 3.5vw;
+            letter-spacing: -.3vw;
+        }
+        .rectangle{
+            border: .8px solid #d2d2d2;
+            font-size: 2.5vw;
+            width: 13vw;
+            text-align: center;
+            height: 3vw;
+            line-height: 3vw;
+            border-radius: .8vw;
+            margin-left: 3vw;
+            margin-right: -2vw;
+            margin-top: 40vw;
+        }
+        #bg .GPS{
+            position: absolute;
+            bottom: .3vw;
+            right: 3vw;
+            color: #fff;
+            font-size: 3vw;
+            padding-left: -.5vw;
+        }
+        /* 问题列表 */
+        .last{
+            background: #ffffff;
+            margin: 2.5vw 2vw;
+            border-radius: 8px;
+        }
+        .question{
+            margin-left: 8vw;
+            padding: 3.5vw 0;
+        }
+        .question li{
+            font-size: 3.5vw;
+            list-style: none;
+            background: url(img/dot.gif) no-repeat 0 3.7vw;
+            padding: 0 4vw;
+        }
+        /* 下导航栏 */
+        #bnav{
+            position: fixed; 
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff; 
+            z-index: 9;
+        }
+        body{
+            margin-bottom: 7.82vh; 
+        }    
+        #bnav ul{
+            border-top: 1px solid #eeeeee;
+            display: flex;
+        }
+        #bnav li{
+            width: 20%; 
+            text-align: center; 
+        }
+        #bnav svg{         
+            color: #494949;
+            font-size: 5vw;
+            margin: 0 auto; 
+        }
+        #bnav span{
+            font-size: 2.8vw;
+            color: #494949;
+            margin: 0 auto;
+            margin-top: -3vw;
+            margin-bottom: -2vw;
+        } 
+        #bnav p{
+            font-size: 2.8vw;
+            color: #494949;
+            margin: 0 auto;
+            margin-top: -3vw;
+            margin-bottom: -2vw;
+        }    
+</style>
+</head>
+<body>
+    <header id="header">
+        <div>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-kefu1"></use>
+              </svg>              
+            <input type="text" placeholder="您好，在线客服为您服务"> 
+        </div>
+         <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-erweimaQRcode"></use>
+          </svg>   
+    </header>
+    <div class="sev" id="play">
+        <ul>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-teshuanzhuang"></use>
+                          </svg>
+                        </span>               
+                <p>我要安装</p>
+                </a>
+            </li> 
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-weixiu"></use>
+                          </svg>
+                        </span>               
+                <p>我要维修</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-a-changyong_qiehuanfuben"></use>
+                          </svg>
+                        </span>               
+                <p>我要退换</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-keylinetubiao-33"></use>
+                          </svg>
+                        </span>               
+                <p>服务进度</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-icon-xiaomiguishu"></use>
+                          </svg>
+                        </span>               
+                <p>小米之家</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-Rrl_s_151"></use>
+                          </svg>
+                        </span>               
+                <p>维修价格</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-16"></use>
+                          </svg>
+                        </span>               
+                <p>我要贴膜</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-fuwu-active"></use>
+                          </svg>
+                        </span>               
+                <p>全部服务</p>
+                </a>
+            </li>
+        </ul>       
+    </div>
+
+    <h5>服务优选</h5>
+    <div class="sev" id="selet">
+            <div class="cate">    
+                <div class="txt"> 
+                    <span class="nm">手机维修钜惠</span>
+                    <span id="desc">主板维修139元起</span>
+                </div>
+                <a href="#"> <img src="./img/ser-p1.png"></a>
+            </div>
+            <div class="cate">             
+                <div class="txt"> 
+                    <span class="nm">手机特惠屏优惠</span>
+                    <span id="desc">屏幕维修150元起</span>
+                </div>
+                <a href="#"> <img src="./img/ser-p1.png"></a>
+            </div>      
+    </div>
+
+    <h5>附近服务
+        <a href="#" class="more">查看更多 ></a></h5>
+    <div class="sev" id="bg">
+        <span><strong>小米之家辽宁锦州凌河区百货大楼专卖店</strong></span>
+        <div class="rectangle">到店自取</div>
+        <div class="rectangle">到店闪送</div>
+        <div class="rectangle">服务受理</div>
+        <a href="#" class="more">
+            <span class="GPS"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-dizhi-white"></use>
+              </svg>2.03 km</span></a>
+    </div>
+
+    <h5>猜你想问
+        <a href="#" class="more">换一换 <span>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-xunhuan101"></use>
+              </svg>
+            </span></a>
+    </h5>
+    <div class="last">
+    <ul class="question">
+        <li>MIUI14适配机型与升级方法</li>
+        <li>手机无法开机怎么办</li>
+        <li>手机丢失了怎么办</li>
+        <li>我想取消/修改订单</li>
+        <li>如何查询小米维修点</li>
+    </ul>
+    </div>
+
+    <nav id="bnav">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shouye"></use>
+                          </svg>
+                        </span>               
+                <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="classification.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fenlei"></use>
+                  </svg>
+                </span>                  
+                <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="service.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fuwu1"></use>
+                  </svg>
+                </span>                  
+                <p>服务</p>
+                </a>
+            </li>
+            <li>
+                <a href="car.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche"></use>
+                  </svg>
+                </span>                  
+                <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="my.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-wode"></use>
+                  </svg>
+                </span>                  
+                <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

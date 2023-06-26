@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover"> 
+    <title>316于淼-购物车</title>
+    <link rel="stylesheet" href="css/pub2.css">
+    <script src="./fonts/iconfont.js"></script>
+    <style>
+        /* 滚动条 */
+        html{
+            line-height: 150%;           
+        }
+        body{
+            background: #f3f3f3;
+        }
+        ul{
+            width: 100%;
+            overflow: hidden;
+        }
+        #header{
+            font-size: 4vw;
+            font-weight: bold;
+            letter-spacing: .05vw;
+            text-align: center;
+            line-height: 6vh;
+            height: 5vh;
+            background: #fff;
+            width: 100%;
+            z-index: 9;
+            top: 0;
+            border-bottom: 1px solid #f4f4f4;
+        }
+        /* 商品列表 */
+        .section{
+            padding: 0;
+            margin: 0;
+        }
+        .md{
+            position: relative;
+            width: 100%;
+            padding: 2vw;
+            text-align: center;
+            font-weight: bold;
+            font-size: smaller;
+            letter-spacing: -1.8px;
+            margin-bottom: 3vw;
+        }
+        .tlist{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 50%;
+        }
+        .tlist li{
+            width: 45%;
+            height: 30vh;
+            background: #fff;
+            margin:1.5vw 2.5vw; 
+            border-radius: 5%;
+        }
+        .list .txt{
+            display: flex;
+            flex-grow: wrap;
+        }
+        .list img{
+            width: 40%;
+            margin-left: 3.5vw;
+        }
+        .list .a{
+            width: 50%;
+            margin-top: 1.5vw;
+            margin-bottom: 1.5vw;
+            padding: 1vw;
+        }
+        .tlist li img{
+            width: 80%;
+            margin-bottom: -2vw;
+        }
+        .tlist li span{
+            width: 25vw;
+            font-size: 3vw; 
+            line-height: 3vw;
+            text-align: center;
+            font-weight: bold;
+            padding: 4.5vw;
+        }
+        .anav{
+            margin-top: 15vw;
+            margin-bottom: -15vw;
+            position: relative;
+        }
+        .anav img{   
+            width: 35%;
+            height: 50%;
+            margin: 0 auto;
+            padding: 1vw;
+        }
+        .anav>span{
+            font-size: 3.5vw;
+            position: absolute;
+            margin-left: 36vw;
+            color: #747474;
+        }
+        .anav div{
+            font-size: 3.5vw;
+            border: 1px solid #c7c7c7;
+            border-radius: 12px;
+            width: 25vw;
+            color: #838383;
+            text-align: center;
+            position: absolute;  
+            margin-top: 14vw;
+            margin-left: 36vw;        
+        }
+        .c1m1 img{
+            margin: 5vw auto;
+            width: 30%;
+            height: 50%;
+        }
+        .c1m2 img{ /* 长图片 */
+            margin: 10vw auto;
+            width: 50%;
+            height: 35%;
+        }
+        .c1m3 img{ /* 正方形图片 */
+            margin: 4vw auto;
+            width: 30%;
+            height: 42.5%;
+        }
+        .tlist li{
+            position: relative;
+        }
+        .txt .name{
+            font-size: 3.5vw;
+            position: absolute;
+            width: 100%;
+            bottom: 18vw;
+            left: 0;
+            text-align: left;
+        }
+        .txt .desc{
+            font-size: 2.5vw;
+            font-weight: normal;
+            color: #808080;
+            position: absolute;
+            width: 100%;
+            bottom: 12vw;
+            left: 0;
+            text-align: left;
+        }
+        .txt .price{
+            font-size: 3.5vw;
+            position: absolute;
+            left: -7vw;
+            bottom: -.5vw;
+            padding: 3vw;
+        }
+        .txt .ad{
+            width: 10vw;
+            height: 3vw;
+            line-height: 3vw;
+            font-size: 2.4vw;
+            padding-left:1.5vw;
+            padding-top: .3vw;
+            padding-bottom: .3vw;
+            font-weight: normal;
+            background: #f3f3f3;
+            position: absolute;
+            color: #747474;
+            border-radius: 8px;
+            bottom: 2vw;
+            right: -2.2vw;
+        }
+        /* 下导航栏 */
+        #bnav{
+            position: fixed; 
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff; 
+            z-index: 9;
+        }
+        body{
+            margin-bottom: 7.82vh; /* 值为下导航的高度 */
+        }    
+       .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+        }
+        #bnav ul{
+            border-top: 1px solid #eeeeee;
+            display: flex;
+        }
+        #bnav li{
+            width: 20%; 
+            text-align: center; 
+        }
+        #bnav svg{         
+            color: #494949;
+            font-size: 5vw;
+            margin: 0 auto; 
+        }
+        #bnav p{
+            font-size: 2.8vw;
+            color: #494949;
+            margin: 0 auto;
+            margin-top: -3vw;
+            margin-bottom: -2vw;
+        }     
+</style>
+</head>
+<body>
+    <header id="header">购物车</header>
+    <nav class="anav">
+        <a href="#"><img src="./img/bg-car.png"></a>
+        <span>购物车还是空的</span>
+        <div>随便看看</div>
+    </nav>
+    
+    <section class="section">
+    <ul class="tlist">
+        <span class="md">猜你喜欢</span>
+        <li>
+            <a href="goods.html" class="c1m1">
+                <img src="./img/car-l1.jpg" class="a">
+            </a>
+            <div class="txt"> 
+                <span class="name">小米手机复刻卡针吊坠</span>
+                <span class="desc">致敬经典，印证小米初心；...</span>
+                <span class="price">￥1</span>
+                <div class="ad">看相似</div>
+            </div>    
+        </li>
+        <li>
+            <a href="#" class="c1m1">
+                <img src="./img/car-l2.png">
+            </a>
+            <div class="txt"> 
+                <span class="name">Xiaomi 12 Pro 天玑版</span>
+                <span class="desc">全球首发天玑9000+ | 叶脉...</span>
+                <span class="price">￥2999起</span>
+                <div class="ad">看相似</div>
+            </div>   
+        </li>
+        <li>
+            <a href="#" class="c1m2">
+                <img src="./img/car-l3.jpg">
+            </a>
+            <div class="txt"> 
+                <span class="name">Xiaomi智能家庭屏 10</span>
+                <span class="desc">超清画质</span>
+                <span class="price">￥799</span>
+                <div class="ad">看相似</div>
+            </div>   
+        </li>
+        <li>
+            <a href="#" class="c1m3">
+                <img src="./img/car-l4.jpeg">
+            </a>
+            <div class="txt"> 
+                <span class="name">扫地机器人</span>
+                <span class="desc">超大吸力，实时清扫</span>
+                <span class="price">￥1399起</span>
+                <div class="ad">看相似</div>
+            </div>   
+        </li>
+        <li>
+            <a href="#" class="c1m2">
+                <img src="./img/car-l5.jpg">
+            </a>
+            <div class="txt"> 
+                <span class="name">小米小爱音箱play</span>
+                <span class="desc">听音乐、语音遥控家电</span>
+                <span class="price">￥99 ￥109</span>
+                <div class="ad">看相似</div>
+            </div>   
+        </li>
+        <li>
+            <a href="#" class="c1m3">
+                <img src="./img/car-l6.jpg">
+            </a>
+            <div class="txt"> 
+                <span class="name">米家激光投影电视 1S 4K</span>
+                <span class="desc"> 性价比超高</span>
+                <span class="price">￥1399起</span>
+                <div class="ad">看相似</div>
+            </div>   
+        </li>
+        <li>
+            <a href="#" class="c1m2">
+                <img src="./img/car-l7.jpg">
+            </a>
+            <div class="txt"> 
+                <span class="name">小米电视 大师77</span>
+                <span class="desc">超清画质，美的享受</span>
+                <span class="price">￥2699起</span>
+                <div class="ad">看相似</div>
+            </div>   
+        </li>
+        <li>
+            <a href="#" class="c1m2">
+                <img src="./img/car-l8.jpg">
+            </a>
+            <div class="txt"> 
+                <span class="name">小米11雷签4699</span>
+                <span class="desc">美的体验</span>
+                <span class="price">￥4699起</span>
+                <div class="ad">看相似</div>
+            </div>   
+        </li>
+    </ul>
+   </section>
+
+    <nav id="bnav">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shouye"></use>
+                          </svg>
+                        </span>               
+                <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="classification.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fenlei"></use>
+                  </svg>
+                </span>                  
+                <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="service.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fuwu"></use>
+                  </svg>
+                </span>                  
+                <p>服务</p>
+                </a>
+            </li>
+            <li>
+                <a href="car.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche1-copy"></use>
+                  </svg>
+                </span>                  
+                <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="my.html">
+                    <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-wode"></use>
+                  </svg>
+                </span>                  
+                <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        window.onscroll=()=>{
+            var st=document.documentElement.scrollTop; /* scrollTop：看不到页面的实时高度 */
+            console.log(st);
+            if(st>header.offsetHeight){  /* offsetHeight: 获取高度(包括padding和border) */
+                header.style.position="fixed"; 
+            } 
+            else{
+                header.style.position="static"; 
+            }
+        }   
+    </script>
+</body>
+</html>
